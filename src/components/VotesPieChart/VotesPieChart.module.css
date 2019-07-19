@@ -1,0 +1,10 @@
+.circle circle {
+    stroke: #c3c3c3;
+    stroke-width: 1;
+    fill: none;
+}
+
+.circle text {
+    font-size: 16px;
+    fill: #969696;
+}

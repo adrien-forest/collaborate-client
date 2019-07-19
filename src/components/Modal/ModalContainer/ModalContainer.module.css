@@ -1,0 +1,55 @@
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    width: 30vw;
+    background: rgb(101,126,212);
+    background: linear-gradient(128deg, rgb(86, 113, 204) 0%, rgb(66, 91, 171) 50%, rgb(65, 89, 171) 100%);
+    padding: 10px 15px;
+    max-height: 95%;
+    overflow-y: scroll;
+    border-radius: 10px;
+    position: relative;
+    color: #D1FAFF;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    -webkit-appearance: none;
+    border: none;
+    font-size: 25px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close:hover {
+    background-color: rgba(0, 0, 0, 0.46);
+    color: #ffffff;
+}
+
+.close span {
+    display: block;
+    margin-top: -4px;
+}
+
+@media screen and (orientation: portrait), screen and (max-width: 768px) {
+    .modal {
+        width: 80vw;
+    }
+}

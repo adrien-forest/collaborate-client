@@ -1,0 +1,43 @@
+.chart {
+    background-color: #BBC2E2;
+    color: #4C5B5C;
+}
+
+.barWrapper {
+    position: relative;
+    border-bottom: solid 1px white;
+    padding: 5px 7px;
+}
+
+.barWrapper:first-child {
+    border-top: solid 1px white;
+}
+
+.vote,
+.voted {
+    position: absolute;
+    right: -55px;
+    top: 7px;
+    height: 32px;
+    width: 55px;
+    background-color: rgb(249, 93, 106);
+    line-height: 32px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.vote:hover {
+    background-color: rgb(218, 80, 92);
+    cursor: pointer;
+}
+
+.voted {
+    background-color: #4eea4e;
+    color: #ffffff;
+}
+
+@media screen and (orientation: portrait) {
+    .chart {
+        width: calc(100% - 55px);
+    }
+}

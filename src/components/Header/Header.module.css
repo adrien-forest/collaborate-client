@@ -1,0 +1,131 @@
+.header {
+    background: rgb(101,126,212);
+    background: linear-gradient(128deg, rgb(86, 113, 204) 0%, rgb(66, 91, 171) 50%, rgb(65, 89, 171) 100%);
+    position: relative;
+    height: 60px;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.logo {
+    background: url(./poll.svg) no-repeat;
+    background-size: 50px;
+    width: 55px;
+    margin-top: 5px;
+}
+
+.title {
+    font-size: 45px;
+    line-height: 60px;
+    text-decoration: none;
+    color: #D1FAFF;
+}
+
+.hamburger {
+    display: none;
+}
+
+.items {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.items button {
+    -webkit-appearance: none;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    font-size: 17px;
+    margin-right: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.items button:hover {
+    background-color: rgba(0, 0, 0, 0.46);
+    color: #ffffff;
+}
+
+button.newPoll {
+    background-color: rgb(249, 93, 106);
+}
+
+button.newPoll:hover {
+    background-color: rgb(218, 80, 92);
+}
+
+.greetings {
+    display: inline;
+    font-size: 17px;
+    margin: 0 15px;
+    color: #D1FAFF;
+}
+
+@media screen and (orientation: portrait), screen and (max-width: 992px) {
+    .logo {
+        width: 40px;
+        background-size: 38px;
+        margin-top: 10px;
+        margin-right: 4px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .hamburger {
+        position: absolute;
+        display: block;
+        right: 14px;
+        top: 12px;
+        color: white;
+    }
+
+    .wrapper {
+        display: none;
+    }
+
+    .showItems {
+        display: flex;
+        flex-direction: column;
+        background-color: #000000a1;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        z-index: 5;
+    }
+
+    .items {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .greetings {
+        margin: 0;
+        width: 100%;
+        background-color: #2f2f2f;
+        padding: 4px 0;
+    }
+
+    .items button:not(.newPoll) {
+        background-color: #ffffff;
+    }
+
+    .items button {
+        width: 100%;
+        border-radius: 0;
+        height: 45px;
+        border-bottom: solid 1px #cecece;
+    }
+}

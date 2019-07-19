@@ -1,0 +1,25 @@
+{
+    "palette": [
+        [0,63,92],
+        [47,75,124],
+        [102,81,145],
+        [160,81,149],
+        [212,80,135],
+        [249,93,106],
+        [255,124,67],
+        [255,166,0]
+    ],
+    "sortingType": "votes",
+    "sortingDir": "desc",
+    "decks": [
+        [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100],
+        [0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
+        [1, 2, 4, 8, 16, 32, 64],
+        [1, 2, 3, 5, 8, "King"]
+    ],
+    "protections": {
+        "IP": "IP Duplication Check",
+        "AUTHENTICATED": "Authenticated users only",
+        "NONE": "No protection"
+    }
+}

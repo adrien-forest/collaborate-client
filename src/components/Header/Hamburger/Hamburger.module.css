@@ -1,0 +1,27 @@
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.barA,
+.barB,
+.barC {
+    width: 30px;
+    height: 4px;
+    background-color: #D1FAFF;
+    margin: 6px 0;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.enabled .barA {
+    transform: rotate(-45deg) translate(-6px, 7px);
+}
+
+.enabled .barB {
+    opacity: 0;
+}
+  
+.enabled .barC {
+    transform: rotate(45deg) translate(-7px, -8px);
+}

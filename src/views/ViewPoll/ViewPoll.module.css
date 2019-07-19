@@ -1,0 +1,36 @@
+.results {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.pie {
+    width: 25vw;
+    margin-left: 100px;
+}
+
+.back {
+    display: block;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100px;
+    border: none;
+}
+
+@media screen and (orientation: portrait) {
+    .results {
+        flex-direction: column;
+    }
+    
+    .pie {
+        width: 50vw;
+        margin: 25px auto;
+    }
+}

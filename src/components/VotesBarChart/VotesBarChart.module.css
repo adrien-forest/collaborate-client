@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    height: 40px;
+    margin: 0 auto;
+    border: solid 1px white;
+}
+
+.fill {
+    animation: progressBar 1s ease-in-out;
+    border-right: solid 1px white;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.value:last-child .fill {
+    border-right: none;
+}
+
+@keyframes progressBar {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.value {
+    line-height: 40px;
+    transition: width 0.5s;
+}
+
+.noVotes {
+    width: 100%;
+    line-height: 40px;
+}

@@ -1,0 +1,16 @@
+.app {
+    text-align: center;
+}
+
+.mainContainer {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+@media screen and (orientation: portrait), screen and (max-width: 768px) {
+    .mainContainer {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+    }
+}
