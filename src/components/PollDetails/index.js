@@ -32,10 +32,10 @@ function PollDetails({ poll, user, onDelete, openSignin, openSignup }) {
 
     return (
         <>
-            <div className={styles.title}>
+            <div data-test='title' className={styles.title}>
                 {title} |<span>{votesCount} votes</span>
             </div>
-            <div className={styles.date}>{formatDate(createdAt)}</div>
+            <div data-test='date' className={styles.date}>{formatDate(createdAt)}</div>
             {description && <div className={styles.desc}>{description}</div>}
             <div className={styles.opts}>
                 <ClipboardLink
@@ -44,21 +44,21 @@ function PollDetails({ poll, user, onDelete, openSignin, openSignup }) {
                     link={`http://${window.location.hostname}:3000/poll/${_id}`}
                 />
                 {owns && (
-                    <button className={styles.delete} onClick={onDelete}>Delete Poll</button>
+                    <button data-test='delete' className={styles.delete} onClick={onDelete}>Delete Poll</button>
                 )}
             </div>
             {!canVote && (
-                <div className={styles.needSignin}>
+                <div data-test='need-signin' className={styles.needSignin}>
                     <div>
-                        <span onClick={openSignin}>Sign in</span> to be able to vote.
+                        <span data-test='signin' onClick={openSignin}>Sign in</span> to be able to vote.
                     </div>
                     <div>
-                        No account? Create one <span onClick={openSignup}>here</span>.
+                        No account? Create one <span data-test='signup' onClick={openSignup}>here</span>.
                     </div>
                 </div>
             )}
             {protection !== 'NONE' && (
-                <div className={styles.protection}>
+                <div data-test='protection' className={styles.protection}>
                     <span role='img' aria-label='lock'>&#x1f512;</span>
                     {protections[protection]}
                 </div>

@@ -1,10 +1,10 @@
 import { CHANGE_OPTION } from './constants';
 
-import { sortingType, sortingDir } from 'config.json';
+import { defaultSortingType, defaultSortingDir } from 'config.json';
 
 const initialState = {
-    sortingType,
-    sortingDir
+    sortingType: defaultSortingType,
+    sortingDir: defaultSortingDir
 };
 
 function reducer(state = initialState, action) {

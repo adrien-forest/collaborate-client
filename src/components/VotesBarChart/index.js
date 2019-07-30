@@ -11,8 +11,9 @@ VotesBarChart.propTypes = {
                 card: PropTypes.string,
                 count: PropTypes.number
             }).isRequired
-        ).isRequired
-    })
+        ).isRequired,
+        votesCount: PropTypes.number.isRequired
+    }).isRequired
 };
 
 function VotesBarChart({ poll }) {
@@ -38,6 +39,7 @@ function VotesBarChart({ poll }) {
                 style={{ width: `${percent}%` }}
             >
                 <div
+                    data-test='block'
                     title={`Card ‘${card}‘ - ${count} votes (${percent.toFixed(1)}%)`}
                     className={styles.fill}
                     style={{backgroundColor: `rgb(${color.join(',')})`}}
@@ -51,7 +53,7 @@ function VotesBarChart({ poll }) {
 
     return (
         <div className={styles.wrapper}>
-            {votes.length > 0 ? (
+            {votesCount && votes.length > 0 ? (
                 <>{elts}</>
             ) : (
                 <div className={styles.noVotes}>No votes yet</div>

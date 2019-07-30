@@ -47,21 +47,21 @@ function CreatePoll({ history }) {
                 <label htmlFor='description'>Description (optional)</label>
                 <textarea id='description' ref={description}/><br/>
                 <label htmlFor='deck'>Deck type</label>
-                <select ref={deck}>
+                <select data-test='decks' ref={deck}>
                     {decks.map((deck, idx) => (
                         <option key={idx} value={idx}>{deck.join(', ')}</option>
                     ))}
                 </select>
                 <br/>
                 <label htmlFor='protection'>Vote protection type</label>
-                <select ref={protection}>
+                <select data-test='protections' ref={protection}>
                     {Object.keys(protections).map(key => (
                         <option key={key} value={key}>{protections[key]}</option>
                     ))}
                 </select>
                 <br/>
                 <input type='submit' value='Create Poll' />
-                {error && <div>Error: {error.message}</div>}
+                {error && <div data-test='error'>Error: {error.message}</div>}
             </Form>
         </>
     );

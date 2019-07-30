@@ -19,7 +19,7 @@ VotesPieChart.propTypes = {
             card: PropTypes.string.isRequired,
             count: PropTypes.number.isRequired
         }).isRequired).isRequired
-    }),
+    }).isRequired,
     className: PropTypes.string
 };
 
@@ -59,8 +59,8 @@ function VotesPieChart({ poll, className }) {
         memo = { percent, color, idx: memo.idx }
 
         return (
-            <path key={idx} d={pathData} fill={`rgb(${color.join(',')})`}>
-                <title>{`Card ‘${card}‘ - ${count} votes (${percent.toFixed(1)}%)`}</title>
+            <path data-test='slice' key={idx} d={pathData} fill={`rgb(${color.join(',')})`}>
+                <title>{`Card ‘${card}‘ - ${count} votes (${(percent * 100).toFixed(1)}%)`}</title>
             </path>
         );
     });

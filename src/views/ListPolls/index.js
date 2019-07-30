@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { VotesBarChart, ErrorMessage } from 'components';
@@ -9,16 +9,7 @@ import { api } from 'utils';
 import { changeOption } from 'components/App/actions';
 
 import styles from './ListPolls.module.css';
-
-const sortingTypeOpts = [
-    { id: 'date', text: 'Date' },
-    { id: 'votes', text: 'Number of votes' }
-];
-
-const sortingDirOpts = [
-    { id: 'asc', text: 'Ascending' },
-    { id: 'desc', text: 'Descending' }
-];
+import { sortingTypeOpts, sortingDirOpts } from 'config.json';
 
 ListPolls.propTypes = {
     sortingDir: PropTypes.string.isRequired,
@@ -78,12 +69,12 @@ function ListPolls({ sortingDir, sortingType, setSortingDir, setSortingType }) {
             <h2>Tasks Polls</h2>
             <div className={styles.sorting}>
                 <label htmlFor='sort'>Sort by</label>
-                <select className={styles.select} in='sort' onChange={handleTypeChange} defaultValue={sortingType}>
+                <select data-test='sortType' className={styles.select} in='sort' onChange={handleTypeChange} defaultValue={sortingType}>
                     {sortingTypeOpts.map(opt => (
                         <option key={opt.id} value={opt.id}>{opt.text}</option>
                     ))}
                 </select>
-                <select  className={styles.select} onChange={handleDirChange} defaultValue={sortingDir}>
+                <select data-test='sortDir' className={styles.select} onChange={handleDirChange} defaultValue={sortingDir}>
                     {sortingDirOpts.map(opt => (
                         <option key={opt.id} value={opt.id}>{opt.text}</option>
                     ))}

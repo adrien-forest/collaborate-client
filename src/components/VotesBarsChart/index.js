@@ -10,24 +10,25 @@ import styles from './VotesBarsChart.module.css';
 VotesBarsChart.propTypes = {
     user: PropTypes.object,
     poll: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
         votesCount: PropTypes.number.isRequired,
         voted: PropTypes.string,
         votes: PropTypes.arrayOf(PropTypes.shape({
             card: PropTypes.string,
             count: PropTypes.number
         }).isRequired).isRequired
-    }),
+    }).isRequired,
     order: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
 };
 
 function VotesBarsChart({ user, poll, order }) {
-    const { votesCount, voted, votes, protection } = poll;
+    const { _id, votesCount, voted, votes, protection } = poll;
     const canVote = protection !== 'AUTHENTICATED' || user;
 
-    const handleVote = newCard => async () => await api.votePoll(poll._id, newCard);
+    const handleVote = newCard => async () => await api.votePoll(_id, newCard);
 
     let memo = { idx: 0 };
-    const mapping = poll.votes.reduce((acc, { card, count }, index) => {
+    const mapping = votes.reduce((acc, { card, count }, index) => {
         let colorIdx;
         if (memo.count === count) {
             colorIdx = memo.colorIdx;
@@ -48,13 +49,13 @@ function VotesBarsChart({ user, poll, order }) {
         const color = palette[colorIdx % palette.length];
 
         return (
-            <div key={card} className={styles.barWrapper}>
+            <div data-test='bar' key={card} className={styles.barWrapper}>
                 <VoteBar key={card} card={card} count={count} totalVotes={votesCount} color={color} />
                 {canVote && voted === card && (
                     <div className={styles.voted}>Voted</div>
                 )}
                 {canVote && voted !== card && (
-                    <div className={styles.vote} onClick={handleVote(card)}>Vote</div>
+                    <div data-test='vote' className={styles.vote} onClick={handleVote(card)}>Vote</div>
                 )}
             </div>
         ); 

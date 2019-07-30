@@ -9,8 +9,16 @@
         [255,124,67],
         [255,166,0]
     ],
-    "sortingType": "votes",
-    "sortingDir": "desc",
+    "sortingTypeOpts": [
+        { "id": "date", "text": "Date" },
+        { "id": "votes", "text": "Number of votes" }
+    ],
+    "sortingDirOpts": [
+        { "id": "asc", "text": "Ascending" },
+        { "id": "desc", "text": "Descending" }
+    ],
+    "defaultSortingType": "votes",
+    "defaultSortingDir": "desc",
     "decks": [
         [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100],
         [0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],

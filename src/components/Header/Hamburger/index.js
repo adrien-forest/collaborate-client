@@ -23,6 +23,7 @@ function Hamburger({ className, onChange, show }) {
 
     return (
         <div
+            data-test='hamburger'
             className={cn(className, styles.container, { [styles.enabled]: enabled })}
             onClick={handleClick}
         >

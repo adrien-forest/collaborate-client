@@ -45,17 +45,17 @@ function Header({ openSigninModal, openSignupModal, signoutAction, user }) {
                             <Link to='/poll'>
                                 <button className={styles.newPoll}>Create Poll</button>
                             </Link>
-                            <button className={styles.button} onClick={openSigninModal}>Sign in</button>
-                            <button className={styles.button} onClick={openSignupModal}>Sign up</button>
+                            <button data-test='sign-in' className={styles.button} onClick={openSigninModal}>Sign in</button>
+                            <button data-test='sign-up' className={styles.button} onClick={openSignupModal}>Sign up</button>
                         </>
                     )}
                     {user && (
                         <>
-                            <div className={styles.greetings}>Hi, {user.username}!</div>
+                            <div data-test='greetings' className={styles.greetings}>Hi, {user.username}!</div>
                             <Link to='/poll'>
                                 <button className={styles.newPoll}>Create Poll</button>
                             </Link>
-                            <button className={styles.button} onClick={signoutAction}>Sign out</button>
+                            <button data-test='sign-out' className={styles.button} onClick={signoutAction}>Sign out</button>
                         </>
                     )}
                 </div>

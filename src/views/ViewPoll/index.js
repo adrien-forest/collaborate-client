@@ -98,7 +98,7 @@ function ViewPoll({
                 </div>
             )}
             {error && <ErrorMessage error={error} />}
-            <button className={styles.back} onClick={history.goBack}>← Go Back</button>
+            <button data-test='back' className={styles.back} onClick={history.goBack}>← Go Back</button>
         </>
     );
 }

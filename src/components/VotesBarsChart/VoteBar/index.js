@@ -18,6 +18,7 @@ function VoteBar({ card, count, totalVotes, color }) {
             <div className={styles.card}>{card}</div>
             <div className={styles.wrapper}>
                 <div
+                    data-test='bar'
                     className={styles.bar}
                     style={{
                         width: `${percent}%`,
@@ -27,7 +28,7 @@ function VoteBar({ card, count, totalVotes, color }) {
                 >
                     <div
                         className={styles.fill}
-                        style={{ backgroundColor: `rgb(${r},${g},${b})`}}
+                        style={{ backgroundColor: `rgb(${r},${g},${b})` }}
                     />
                 </div>
             </div>

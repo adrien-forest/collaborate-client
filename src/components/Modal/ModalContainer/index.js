@@ -13,7 +13,7 @@ function ModalContainer({ children, onClose }) {
         <div className={styles.backdrop}>
             <div className={styles.modal}>
                 <div>{children}</div>
-                <button className={styles.close} onClick={onClose}>
+                <button data-test='close' className={styles.close} onClick={onClose}>
                     <span>×</span>
                 </button>
             </div>
